@@ -1,13 +1,25 @@
-// Impement fizzbuzz logic
-function fizzbuzz(number) {
-  return '0';
+function fizzbuzz(i)  {
+  let res = '';  
+  
+  if (i % 3 === 0) {
+    res += 'Fizz';
+  }
+
+  if (i %5 == 0) {
+    res += 'Buzz';
+  }
+
+  return res || i;
 }
 
-// Implement the wrapper so we can count from 0 to STOP.
-function main() {
-   for(let i=0; i<10;i++) {
-     console.log(fizzbuzz(i));
+function main (n)  {
+  let resArray = [];
+
+   for (let i = 1; i <= n ; i ++ )  {
+     resArray.push(fizzbuzz(i));
    }
+
+  return resArray;
 }
 
-main();
+main(36);
